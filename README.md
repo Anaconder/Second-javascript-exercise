@@ -62,3 +62,58 @@ Logic Errors: errors where the syntax is correct, but the logic behind the code 
 Try and Catch
 The try block defines code to try. If an error is thrown within that block (either manually or by JavaScript), it will then execute the code within the catch block. There is also an optional finally block that will always be executed before control flow exits the try...catch construct.
 
+
+
+Dylan's Notes
+
+let x = 10;
+let y = 5;
+
+let k;
+
+// Better Scope Definitions
+//  // Global - can be at BOM or sometimes refered to page/script scoped
+//  // Modular - scoped for the module (page/script)
+//  // Block scoped - exists only in that block and inner blocks below it
+
+// Types of Errors:
+//  // Reference Error - variable/value doesnt exist or it doesnt exist in the scope you are trying access it in, or file has incorrect paths
+
+{
+  // Variable declared inside a code block, cannot be accessed outside a code block
+  //Variables can be passed to inner code blocks, never outer
+  let z = x + y;
+  // console.log(z);
+}
+
+//  If / Else - if conditional is met, run code. else skip or check next condition
+// // 1.) if keyword
+// // 2.) followed by parenthases with a conditional statement,
+// // 3.) followed by braces containing code to be run
+// // 4.) optional, else if, or else statement
+let num = 10;
+
+if (num <= 10) {
+  console.log(`✅ ${num} is less than or equal to 10.`);
+} else {
+  console.log(`❌ ${num} is greater than 10.`);
+}
+
+
+let grade = 54
+// If a learner gets 90 or higher: console.log("A")
+if(grade >= 90){
+    console.log(`A`)
+} else if(grade >= 80){
+    // If a learner get 80 or above: console.log("B")
+    console.log(`B`)
+} else if( grade >= 70){
+    // If a learner get 70 or above: console.log("C")
+    console.log(`C`)
+} else if( grade >= 55){
+    // If a learner get 55 or above: console.log("D")
+    console.log(`D`)
+} else {
+    // Any grade lower than 55: console.log("F")
+    console.log(`F, try again`)
+}
